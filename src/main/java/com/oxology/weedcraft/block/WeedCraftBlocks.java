@@ -11,5 +11,5 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class WeedCraftBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, WeedCraft.MOD_ID);
 
-    public static final RegistryObject<Block> WEED_FLOWER = BLOCKS.register("weed_crop", () -> new WeedCropBlock(AbstractBlock.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+    public static final RegistryObject<Block> WEED_CROP = BLOCKS.register("weed_crop", () -> new WeedCropBlock(AbstractBlock.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
 }
