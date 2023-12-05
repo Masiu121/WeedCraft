@@ -1,6 +1,6 @@
 {
-  "parent": "block/crop",
+  "parent": "weedcraft:block/weed_crop",
   "textures": {
-    "crop": "weedcraft:block/weed_crop/weed_crop_0"
+    "weed_crop": "weedcraft:block/weed_crop/weed_crop_0"
   }
 }
