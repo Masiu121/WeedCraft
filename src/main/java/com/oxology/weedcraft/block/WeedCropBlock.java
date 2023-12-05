@@ -22,18 +22,22 @@ import java.util.Random;
 
 public class WeedCropBlock extends CropsBlock {
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] {
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 4.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 6.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 10.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 12.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 14.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D),
-            Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D),
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 5.0D, 16.0D),
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 15.0D, 16.0D),
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 15.0D, 16.0D),
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 15.0D, 16.0D),
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 15.0D, 16.0D),
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 15.0D, 16.0D),
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 15.0D, 16.0D),
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 3.0D, 16.0D),
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 8.0D, 16.0D),
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 10.0D, 16.0D),
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 13.0D, 16.0D),
+            Block.box(0.0D, -1.0D, 0.0D, 16.0D, 15.0D, 16.0D),
     };
 
-    private static final IntegerProperty AGE = IntegerProperty.create("age", 0, 8);
+    private static final IntegerProperty AGE = IntegerProperty.create("age", 0, 12);
 
     public WeedCropBlock(Properties properties) {
         super(properties);
@@ -54,16 +58,15 @@ public class WeedCropBlock extends CropsBlock {
         if (pWorld.getRawBrightness(pPos, 0) >= 9) {
             int currentAge = this.getAge(pState);
 
-            if (currentAge < this.getMaxAge()) {
+            if (currentAge <= 6) {
                 float growthSpeed = getGrowthSpeed(this, pWorld, pPos);
 
                 if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(pWorld, pPos, pState, pRandom.nextInt((int)(25.0F / growthSpeed) + 1) == 0)) {
-                    if(currentAge == 7) {
-                        if(pWorld.getBlockState(pPos.above(1)).is(Blocks.AIR)) {
-                            pWorld.setBlock(pPos.above(1), this.getStateForAge(currentAge + 1), 2);
-                        }
+                    if((currentAge+1) > 2 && (pWorld.getBlockState(pPos.above(1)).is(Blocks.AIR) || pWorld.getBlockState(pPos.above(1)).is(this))) {
+                        pWorld.setBlock(pPos, getStateForAge(currentAge+1), 2);
+                        pWorld.setBlock(pPos.above(1), getStateForAge(currentAge+6), 2);
                     } else {
-                        pWorld.setBlock(pPos, this.getStateForAge(currentAge + 1), 2);
+                        pWorld.setBlock(pPos, getStateForAge(currentAge+1), 2);
                     }
 
                     net.minecraftforge.common.ForgeHooks.onCropsGrowPost(pWorld, pPos, pState);
@@ -76,27 +79,27 @@ public class WeedCropBlock extends CropsBlock {
     public boolean canSurvive(BlockState pState, IWorldReader pGetter, BlockPos pPos) {
         return super.canSurvive(pState, pGetter, pPos) ||
                 pGetter.getBlockState(pPos.below(1)).is(this) &&
-                pGetter.getBlockState(pPos.below(1)).getValue(AGE) == 7;
+                pGetter.getBlockState(pPos.below(1)).getValue(AGE) > 2;
     }
 
     @Override
     public void growCrops(World pWorld, BlockPos pPos, BlockState pState) {
         int nextAge = this.getAge(pState) + this.getBonemealAgeIncrease(pWorld);
-        int maxAge = getMaxAge();
-        if(nextAge > maxAge) {
-            nextAge = maxAge;
+        if(nextAge > 8) {
+            nextAge = 8;
         }
 
-        if(getAge(pState) == 7 && pWorld.getBlockState(pPos.above(1)).is(Blocks.AIR)) {
-            pWorld.setBlock(pPos.above(1), getStateForAge(nextAge), 2);
+        if(nextAge > 2 && (pWorld.getBlockState(pPos.above(1)).is(Blocks.AIR) || pWorld.getBlockState(pPos.above(1)).is(this))) {
+            pWorld.setBlock(pPos, getStateForAge(nextAge-1), 2);
+            pWorld.setBlock(pPos.above(1), getStateForAge((nextAge-1)+5), 2);
         } else {
-            pWorld.setBlock(pPos, getStateForAge(nextAge - 1), 2);
+            pWorld.setBlock(pPos, getStateForAge(nextAge-1), 2);
         }
     }
 
     @Override
     public int getMaxAge() {
-        return 7+1;
+        return 12;
     }
 
     @Override
