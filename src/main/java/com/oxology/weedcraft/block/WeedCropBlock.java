@@ -15,7 +15,10 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.IPlantable;
+
+import java.util.Random;
 
 public class WeedCropBlock extends CropsBlock {
     private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[] {
@@ -44,6 +47,29 @@ public class WeedCropBlock extends CropsBlock {
     @Override
     public boolean canSustainPlant(BlockState pState, IBlockReader pWorld, BlockPos pPos, Direction pFacing, IPlantable pPlantable) {
         return super.mayPlaceOn(pState, pWorld, pPos);
+    }
+
+    public void randomTick(BlockState pState, ServerWorld pWorld, BlockPos pPos, Random pRandom) {
+        if (!pWorld.isAreaLoaded(pPos, 1)) return;
+        if (pWorld.getRawBrightness(pPos, 0) >= 9) {
+            int currentAge = this.getAge(pState);
+
+            if (currentAge < this.getMaxAge()) {
+                float growthSpeed = getGrowthSpeed(this, pWorld, pPos);
+
+                if (net.minecraftforge.common.ForgeHooks.onCropsGrowPre(pWorld, pPos, pState, pRandom.nextInt((int)(25.0F / growthSpeed) + 1) == 0)) {
+                    if(currentAge == 7) {
+                        if(pWorld.getBlockState(pPos.above(1)).is(Blocks.AIR)) {
+                            pWorld.setBlock(pPos.above(1), this.getStateForAge(currentAge + 1), 2);
+                        }
+                    } else {
+                        pWorld.setBlock(pPos, this.getStateForAge(currentAge + 1), 2);
+                    }
+
+                    net.minecraftforge.common.ForgeHooks.onCropsGrowPost(pWorld, pPos, pState);
+                }
+            }
+        }
     }
 
     @Override
