@@ -1,8 +1,11 @@
 package com.oxology.weedcraft;
 
+import com.oxology.weedcraft.block.WeedCraftBlocks;
 import com.oxology.weedcraft.item.WeedCraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -28,6 +31,7 @@ public class WeedCraft {
 
     public WeedCraft() {
         WeedCraftItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        WeedCraftBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
@@ -39,7 +43,8 @@ public class WeedCraft {
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        // some preinit code
+        RenderTypeLookup.setRenderLayer(WeedCraftBlocks.WEED_CROP.get(), RenderType.cutout());
+
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
