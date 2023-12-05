@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "weedcraft:weed_flower"
+  },
+  "result": "weedcraft:weed_flower_dried",
+  "cookingTime": 100
+}

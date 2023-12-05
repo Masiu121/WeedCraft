@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "weedcraft:weed_leaf"
+  },
+  "result": "weedcraft:weed_leaf_dried",
+  "cookingTime": 50
+}

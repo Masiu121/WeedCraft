@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="All rights reserved"
+
+[[mods]]
+    modId="weedcraft"
+    version="${file.jarVersion}"
+    displayName="WeedCraft"
+    #logoFile="weedcraft.png"
+    authors="Oxology"
+    description="WeedCraft is a mod that adds cannabis, joints and many more weed-related stuff to the game"
+
+    [[dependencies.weedcraft]]
+        modId="forge"
+        mandatory=true
+        versionRange="[36,)"
+        ordering="NONE"
+        side="BOTH"
+
+    [[dependencies.weedcraft]]
+        modId="minecraft"
+        mandatory=true
+        versionRange="[1.16.5,1.17)"
+        ordering="NONE"
+        side="BOTH"
