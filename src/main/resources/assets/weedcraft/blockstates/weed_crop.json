@@ -1,28 +1,31 @@
 {
   "variants": {
     "age=0": {
-      "model": "weedcraft:block/weed_crop0"
+      "model": "weedcraft:block/weed_crop_0"
     },
     "age=1": {
-      "model": "weedcraft:block/weed_crop1"
+      "model": "weedcraft:block/weed_crop_1"
     },
     "age=2": {
-      "model": "weedcraft:block/weed_crop2"
+      "model": "weedcraft:block/weed_crop_2"
     },
     "age=3": {
-      "model": "weedcraft:block/weed_crop3"
+      "model": "weedcraft:block/weed_crop_3"
     },
     "age=4": {
-      "model": "weedcraft:block/weed_crop4"
+      "model": "weedcraft:block/weed_crop_4"
     },
     "age=5": {
-      "model": "weedcraft:block/weed_crop5"
+      "model": "weedcraft:block/weed_crop_5"
     },
     "age=6": {
-      "model": "weedcraft:block/weed_crop6"
+      "model": "weedcraft:block/weed_crop_6"
     },
     "age=7": {
-      "model": "weedcraft:block/weed_crop7"
+      "model": "weedcraft:block/weed_crop_7"
+    },
+    "age=8": {
+      "model": "weedcraft:block/weed_crop_7"
     }
   }
 }
