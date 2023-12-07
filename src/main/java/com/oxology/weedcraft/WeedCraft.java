@@ -1,11 +1,13 @@
 package com.oxology.weedcraft;
 
 import com.oxology.weedcraft.block.WeedCraftBlocks;
+import com.oxology.weedcraft.block.WeedHookBlock;
 import com.oxology.weedcraft.item.WeedCraftItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.item.ItemGroup;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -26,6 +28,7 @@ import java.util.stream.Collectors;
 public class WeedCraft {
     public static final String MOD_ID = "weedcraft";
 
+    public static final WeedcraftCreativeTab creativeTab = new WeedcraftCreativeTab(ItemGroup.TABS.length, "WeedCraft");
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -38,12 +41,14 @@ public class WeedCraft {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
+        MinecraftForge.EVENT_BUS.register(WeedHookBlock.class);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
         RenderTypeLookup.setRenderLayer(WeedCraftBlocks.WEED_CROP.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(WeedCraftBlocks.WEED_HOOK.get(), RenderType.cutout());
 
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
