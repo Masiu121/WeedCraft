@@ -18,7 +18,7 @@
                   }
                 }
               ],
-              "name": "weedcraft:weed_flower"
+              "name": "weedcraft:weed_plant"
             },
             {
               "type": "minecraft:item",
@@ -45,35 +45,6 @@
             }
           ],
           "name": "weedcraft:weed_seeds"
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "minecraft:block_state_property",
-          "block": "weedcraft:weed_crop",
-          "properties": {
-            "age": "7"
-          }
-        }
-      ]
-    },
-    {
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "function": "minecraft:apply_bonus",
-              "enchantment": "minecraft:fortune",
-              "formula": "minecraft:binomial_with_bonus_count",
-              "parameters": {
-                "extra": 2,
-                "probability": 0.5714286
-              }
-            }
-          ],
-          "name": "weedcraft:weed_leaf"
         }
       ],
       "conditions": [

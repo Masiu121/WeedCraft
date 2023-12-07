@@ -1,0 +1,7 @@
+{
+  "parent": "weedcraft:block/weed_hook",
+  "textures": {
+    "plant_bottom": "weedcraft:block/weed_crop/weed_crop_7",
+    "plant_top": "weedcraft:block/weed_crop/weed_crop_12"
+  }
+}
