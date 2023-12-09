@@ -19,16 +19,16 @@ public class WeedCraftBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        makeCornCrop(((WeedCropBlock) WeedCraftBlocks.WEED_CROP.get()), "weed_crop_", "weed_crop_");
+        makeWeedCrop(((WeedCropBlock) WeedCraftBlocks.WEED_CROP.get()), "weed_crop_", "weed_crop_");
     }
 
-    public void makeCornCrop(WeedCropBlock block, String modelName, String textureName) {
-        Function<BlockState, ConfiguredModel[]> function = state -> cornStates(state, block, modelName, textureName);
+    public void makeWeedCrop(WeedCropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> weedStates(state, block, modelName, textureName);
 
         getVariantBuilder(block).forAllStates(function);
     }
 
-    private ConfiguredModel[] cornStates(BlockState state, WeedCropBlock block, String modelName, String textureName) {
+    private ConfiguredModel[] weedStates(BlockState state, WeedCropBlock block, String modelName, String textureName) {
         ConfiguredModel[] models = new ConfiguredModel[1];
         models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((WeedCropBlock) block).getAgeProperty()),
                 new ResourceLocation(WeedCraft.MOD_ID, "block/" + textureName + state.getValue(((WeedCropBlock) block).getAgeProperty()))));

@@ -1,9 +1,12 @@
 {
-  "item.weedcraft.weed_leaf": "Weed leaf",
-  "item.weedcraft.weed_leaf_dried": "Dried weed leaf",
   "item.weedcraft.weed_flower": "Weed flower",
-  "item.weedcraft.weed_flower_dried": "Dried weed flower",
+  "item.weedcraft.weed_grinded": "Grinded weed",
+  "item.weedcraft.weed_grinder": "Weed grinder",
+  "item.weedcraft.weed_plant": "Weed plant",
+  "item.weedcraft.weed_leaf": "Weed leaf",
   "item.weedcraft.weed_joint": "Weed joint",
-  "item.weedcraft.weed_seeds": "Weed seeds",
-  "item.weedcraft.weed_skin": "Weed skin"
+  "item.weedcraft.weed_skin": "Weed skin",
+  "block.weedcraft.weed_crop": "Weed seeds",
+  "block.weedcraft.weed_hook": "Weed hook",
+  "itemGroup.WeedCraft": "WeedCraft"
 }

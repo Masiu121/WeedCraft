@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "weedcraft:weed_grinder"
+    },
+    {
+      "item": "weedcraft:weed_flower"
+    }
+  ],
+  "result": {
+    "item": "weedcraft:weed_grinded",
+    "count": 2
+  }
+}
