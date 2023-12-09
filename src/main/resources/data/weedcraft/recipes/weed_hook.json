@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " # ",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:chain"
+    },
+    "/": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "result": {
+    "item": "weedcraft:weed_hook"
+  }
+}
