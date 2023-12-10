@@ -4,9 +4,9 @@ license="All rights reserved"
 
 [[mods]]
     modId="weedcraft"
-    version="${file.jarVersion}"
+    version="1.0 Beta"
     displayName="WeedCraft"
-    #logoFile="weedcraft.png"
+    logoFile="weedcraft.png"
     authors="Oxology"
     description="WeedCraft is a mod that adds cannabis, joints and many more weed-related stuff to the game"
 
