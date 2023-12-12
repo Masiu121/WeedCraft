@@ -1,0 +1,76 @@
+{
+  "variants": {
+    "age=0,variant=none": {
+      "model": "weedcraft:block/pot_empty"
+    },
+    "age=1,variant=none": {
+      "model": "weedcraft:block/pot_empty"
+    },
+    "age=2,variant=none": {
+      "model": "weedcraft:block/pot_empty"
+    },
+    "age=3,variant=none": {
+      "model": "weedcraft:block/pot_empty"
+    },
+    "age=4,variant=none": {
+      "model": "weedcraft:block/pot_empty"
+    },
+    "age=5,variant=none": {
+      "model": "weedcraft:block/pot_empty"
+    },
+    "age=6,variant=none": {
+      "model": "weedcraft:block/pot_empty"
+    },
+    "age=7,variant=none": {
+      "model": "weedcraft:block/pot_empty"
+    },
+    "age=0,variant=purple_haze": {
+      "model": "weedcraft:block/pot_purple_haze_0"
+    },
+    "age=1,variant=purple_haze": {
+      "model": "weedcraft:block/pot_purple_haze_1"
+    },
+    "age=2,variant=purple_haze": {
+      "model": "weedcraft:block/pot_purple_haze_2"
+    },
+    "age=3,variant=purple_haze": {
+      "model": "weedcraft:block/pot_purple_haze_3"
+    },
+    "age=4,variant=purple_haze": {
+      "model": "weedcraft:block/pot_purple_haze_4"
+    },
+    "age=5,variant=purple_haze": {
+      "model": "weedcraft:block/pot_purple_haze_5"
+    },
+    "age=6,variant=purple_haze": {
+      "model": "weedcraft:block/pot_purple_haze_6"
+    },
+    "age=7,variant=purple_haze": {
+      "model": "weedcraft:block/pot_purple_haze_7"
+    },
+    "age=0,variant=lemon_haze": {
+      "model": "weedcraft:block/pot_lemon_haze_0"
+    },
+    "age=1,variant=lemon_haze": {
+      "model": "weedcraft:block/pot_lemon_haze_1"
+    },
+    "age=2,variant=lemon_haze": {
+      "model": "weedcraft:block/pot_lemon_haze_2"
+    },
+    "age=3,variant=lemon_haze": {
+      "model": "weedcraft:block/pot_lemon_haze_3"
+    },
+    "age=4,variant=lemon_haze": {
+      "model": "weedcraft:block/pot_lemon_haze_4"
+    },
+    "age=5,variant=lemon_haze": {
+      "model": "weedcraft:block/pot_lemon_haze_5"
+    },
+    "age=6,variant=lemon_haze": {
+      "model": "weedcraft:block/pot_lemon_haze_6"
+    },
+    "age=7,variant=lemon_haze": {
+      "model": "weedcraft:block/pot_lemon_haze_7"
+    }
+  }
+}

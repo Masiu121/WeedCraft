@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "variant=none": {
+      "model": "weedcraft:block/hook_empty"
+    },
+    "variant=purple_haze": {
+      "model": "weedcraft:block/hook_purple_haze"
+    },
+    "variant=lemon_haze": {
+      "model": "weedcraft:block/hook_lemon_haze"
+    }
+  }
+}
