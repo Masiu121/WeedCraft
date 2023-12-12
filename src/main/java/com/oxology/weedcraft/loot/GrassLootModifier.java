@@ -2,6 +2,7 @@ package com.oxology.weedcraft.loot;
 
 import com.google.gson.JsonObject;
 import com.oxology.weedcraft.WeedCraft;
+import com.oxology.weedcraft.util.WeedVariant;
 import com.oxology.weedcraft.item.WeedCraftItems;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.LootContext;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.common.Mod;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.Random;
 
 @Mod.EventBusSubscriber(modid = WeedCraft.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class GrassLootModifier extends LootModifier {
@@ -31,7 +33,12 @@ public class GrassLootModifier extends LootModifier {
     @Nonnull
     @Override
     protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
-        generatedLoot.add(new ItemStack(WeedCraftItems.WEED_SEEDS.get()));
+        WeedVariant weedVariant;
+        do {
+            weedVariant = WeedVariant.values()[new Random().nextInt(WeedVariant.values().length)];
+        } while(weedVariant == WeedVariant.NONE);
+
+        generatedLoot.add(new ItemStack(WeedCraftItems.getSeedsByVariant(weedVariant).get()));
         return generatedLoot;
     }
 
