@@ -1,38 +1,71 @@
 package com.oxology.weedcraft.datagen;
 
 import com.oxology.weedcraft.WeedCraft;
+import com.oxology.weedcraft.util.WeedVariant;
 import com.oxology.weedcraft.block.WeedCraftBlocks;
-import com.oxology.weedcraft.block.WeedCropBlock;
-import net.minecraft.block.BlockState;
+import com.oxology.weedcraft.block.WeedHookBlock;
+import com.oxology.weedcraft.block.WeedPotBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-import java.util.function.Function;
-
 public class WeedCraftBlockStateProvider extends BlockStateProvider {
-    public WeedCraftBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
-        super(gen, WeedCraft.MOD_ID, exFileHelper);
+    public WeedCraftBlockStateProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
+        super(generator, WeedCraft.MOD_ID, existingFileHelper);
     }
 
     @Override
     protected void registerStatesAndModels() {
-        makeWeedCrop(((WeedCropBlock) WeedCraftBlocks.WEED_CROP.get()), "weed_crop_", "weed_crop_");
+        potBlock((WeedPotBlock) WeedCraftBlocks.POT.get());
+        hookBlock((WeedHookBlock) WeedCraftBlocks.HOOK.get());
     }
 
-    public void makeWeedCrop(WeedCropBlock block, String modelName, String textureName) {
-        Function<BlockState, ConfiguredModel[]> function = state -> weedStates(state, block, modelName, textureName);
+    public void potBlock(WeedPotBlock block) {
+        getVariantBuilder(block).forAllStates(state -> {
+            BlockModelBuilder modelBuilder;
 
-        getVariantBuilder(block).forAllStates(function);
+            if(state.getValue(WeedPotBlock.VARIANT) == WeedVariant.NONE) {
+                modelBuilder = models().withExistingParent("pot_empty", new ResourceLocation(WeedCraft.MOD_ID, "block/pot"));
+                return new ConfiguredModel[] { new ConfiguredModel(modelBuilder) };
+            }
+
+            String modelName = "pot_" + state.getValue(WeedPotBlock.VARIANT) + "_" + state.getValue(WeedPotBlock.AGE);
+            modelBuilder = models().withExistingParent(modelName, new ResourceLocation(WeedCraft.MOD_ID, "block/pot"));
+
+            String textureName = state.getValue(WeedPotBlock.VARIANT) + "_" + state.getValue(WeedPotBlock.AGE);
+            modelBuilder.texture("crop_bottom", new ResourceLocation(WeedCraft.MOD_ID, "block/" + textureName));
+            if(state.getValue(WeedPotBlock.AGE) >= 3) {
+                textureName = state.getValue(WeedPotBlock.VARIANT) + "_" + (state.getValue(WeedPotBlock.AGE) + 5);
+                modelBuilder.texture("crop_top", new ResourceLocation(WeedCraft.MOD_ID, "block/" + textureName));
+            } else {
+                modelBuilder.texture("crop_top", new ResourceLocation(WeedCraft.MOD_ID, "block/air"));
+            }
+
+            return new ConfiguredModel[] { new ConfiguredModel(modelBuilder) };
+        });
     }
 
-    private ConfiguredModel[] weedStates(BlockState state, WeedCropBlock block, String modelName, String textureName) {
-        ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((WeedCropBlock) block).getAgeProperty()),
-                new ResourceLocation(WeedCraft.MOD_ID, "block/" + textureName + state.getValue(((WeedCropBlock) block).getAgeProperty()))));
+    public void hookBlock(WeedHookBlock block) {
+        getVariantBuilder(block).forAllStates(state -> {
+            BlockModelBuilder modelBuilder;
 
-        return models;
+            if(state.getValue(WeedPotBlock.VARIANT) == WeedVariant.NONE) {
+                modelBuilder = models().withExistingParent("hook_empty", new ResourceLocation(WeedCraft.MOD_ID, "block/hook"));
+                return new ConfiguredModel[] { new ConfiguredModel(modelBuilder) };
+            }
+
+            String modelName = "hook_" + state.getValue(WeedPotBlock.VARIANT);
+            modelBuilder = models().withExistingParent(modelName, new ResourceLocation(WeedCraft.MOD_ID, "block/hook"));
+
+            String textureName = state.getValue(WeedPotBlock.VARIANT) + "_7";
+            modelBuilder.texture("crop_bottom", new ResourceLocation(WeedCraft.MOD_ID, "block/" + textureName));
+            textureName = state.getValue(WeedPotBlock.VARIANT) + "_12";
+            modelBuilder.texture("crop_top", new ResourceLocation(WeedCraft.MOD_ID, "block/" + textureName));
+
+            return new ConfiguredModel[] { new ConfiguredModel(modelBuilder) };
+        });
     }
 }

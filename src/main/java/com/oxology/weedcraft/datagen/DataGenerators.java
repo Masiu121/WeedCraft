@@ -15,5 +15,6 @@ public class DataGenerators {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
         generator.addProvider(new WeedCraftBlockStateProvider(generator, existingFileHelper));
+        generator.addProvider(new WeedCraftItemModelProvider(generator, existingFileHelper));
     }
 }
