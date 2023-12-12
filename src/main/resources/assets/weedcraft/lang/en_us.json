@@ -1,12 +1,22 @@
 {
-  "item.weedcraft.weed_flower": "Weed flower",
-  "item.weedcraft.weed_grinded": "Grinded weed",
-  "item.weedcraft.weed_grinder": "Weed grinder",
-  "item.weedcraft.weed_plant": "Weed plant",
-  "item.weedcraft.weed_leaf": "Weed leaf",
+  "item.weedcraft.seeds_purple_haze": "Purple haze seeds",
+  "item.weedcraft.flower_purple_haze": "Purple haze flower",
+  "item.weedcraft.grinded_purple_haze": "Grinded purple haze",
+  "item.weedcraft.plant_purple_haze": "Purple haze plant",
+  "item.weedcraft.leaf_purple_haze": "Purple haze leaf",
+
+  "item.weedcraft.seeds_lemon_haze": "Lemon haze seeds",
+  "item.weedcraft.flower_lemon_haze": "Lemon haze flower",
+  "item.weedcraft.grinded_lemon_haze": "Grinded lemon haze",
+  "item.weedcraft.plant_lemon_haze": "Lemon haze plant",
+  "item.weedcraft.leaf_lemon_haze": "Lemon haze leaf",
+
+  "item.weedcraft.grinder": "Grinder",
   "item.weedcraft.weed_joint": "Weed joint",
   "item.weedcraft.weed_skin": "Weed skin",
-  "block.weedcraft.weed_crop": "Weed seeds",
-  "block.weedcraft.weed_hook": "Weed hook",
+
+  "block.weedcraft.hook": "Hook",
+  "block.weedcraft.pot": "Pot",
+
   "itemGroup.WeedCraft": "WeedCraft"
 }
