@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "weedcraft:weed_grinder"
+      "item": "weedcraft:grinder"
     },
     {
-      "item": "weedcraft:weed_flower"
+      "item": "weedcraft:flower_lemon_haze"
     }
   ],
   "result": {
-    "item": "weedcraft:weed_grinded",
+    "item": "weedcraft:grinded_lemon_haze",
     "count": 2
   }
 }

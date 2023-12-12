@@ -1,0 +1,61 @@
+{
+  "textures": {
+    "particle": "minecraft:block/chain",
+    "crop_bottom": "weedcraft:block/air",
+    "crop_top": "weedcraft:block/air"
+  },
+  "elements": [
+    {
+      "from": [ 6.5, 8, 8 ],
+      "to": [ 9.5, 16, 8 ],
+      "faces": {
+        "north": { "uv": [ 0, 0, 3, 8 ], "texture": "#particle" },
+        "south": { "uv": [ 0, 0, 3, 8 ], "texture": "#particle" }
+      }
+    },
+    {
+      "from": [ 8, 8, 6.5 ],
+      "to": [ 8, 16, 9.5 ],
+      "faces": {
+        "west": { "uv": [ 3, 0, 6, 8 ], "texture": "#particle" },
+        "east": { "uv": [ 3, 0, 6, 8 ], "texture": "#particle" }
+      }
+    },
+    {
+      "from": [ 0.8, -16, 8 ],
+      "to": [ 15.2, 0, 8 ],
+      "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+      "faces": {
+        "north": { "uv": [ 0, 0, 16, 16 ], "rotation": 180, "texture": "#crop_top" },
+        "south": { "uv": [ 0, 0, 16, 16 ], "rotation": 180, "texture": "#crop_top" }
+      }
+    },
+    {
+      "from": [ 8, -16, 0.8 ],
+      "to": [ 8, 0, 15.2 ],
+      "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+      "faces": {
+        "west": { "uv": [ 0, 0, 16, 16 ], "rotation": 180, "texture": "#crop_top" },
+        "east": { "uv": [ 0, 0, 16, 16 ], "rotation": 180, "texture": "#crop_top" }
+      }
+    },
+    {
+      "from": [ 0.8, 0, 8 ],
+      "to": [ 15.2, 12, 8 ],
+      "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+      "faces": {
+        "north": { "uv": [ 0, 0, 16, 12 ], "rotation": 180, "texture": "#crop_bottom" },
+        "south": { "uv": [ 0, 0, 16, 12 ], "rotation": 180, "texture": "#crop_bottom" }
+      }
+    },
+    {
+      "from": [ 8, 0, 0.8 ],
+      "to": [ 8, 12, 15.2 ],
+      "rotation": { "origin": [ 8, 8, 8 ], "axis": "y", "angle": 45, "rescale": true },
+      "faces": {
+        "west": { "uv": [ 0, 0, 16, 12 ], "rotation": 180, "texture": "#crop_bottom" },
+        "east": { "uv": [ 0, 0, 16, 12 ], "rotation": 180, "texture": "#crop_bottom" }
+      }
+    }
+  ]
+}
