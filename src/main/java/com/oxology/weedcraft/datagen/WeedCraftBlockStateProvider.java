@@ -1,6 +1,7 @@
 package com.oxology.weedcraft.datagen;
 
 import com.oxology.weedcraft.WeedCraft;
+import com.oxology.weedcraft.block.WeedLightBlock;
 import com.oxology.weedcraft.util.WeedVariant;
 import com.oxology.weedcraft.block.WeedCraftBlocks;
 import com.oxology.weedcraft.block.WeedHookBlock;

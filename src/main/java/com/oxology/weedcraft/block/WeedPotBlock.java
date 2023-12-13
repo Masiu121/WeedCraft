@@ -24,7 +24,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import java.util.Random;
 
 public class WeedPotBlock extends Block {
-    protected static final VoxelShape SHAPE = Block.box(3.0D, 0.0D, 3.0D, 13.0D, 8.0D, 13.0D);
+    protected static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 7.0D, 12.0D);
     public static final IntegerProperty AGE = IntegerProperty.create("age", 0, 7);
     public static final EnumProperty<WeedVariant> VARIANT = EnumProperty.create("variant", WeedVariant.class);
 

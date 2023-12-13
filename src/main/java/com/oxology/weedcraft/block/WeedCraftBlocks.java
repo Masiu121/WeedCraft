@@ -13,4 +13,5 @@ public class WeedCraftBlocks {
 
     public static final RegistryObject<Block> HOOK = BLOCKS.register("hook", () -> new WeedHookBlock(AbstractBlock.Properties.copy(Blocks.CHAIN).noOcclusion().noCollission()));
     public static final RegistryObject<Block> POT = BLOCKS.register("pot", () -> new WeedPotBlock(AbstractBlock.Properties.copy(Blocks.FLOWER_POT).noOcclusion()));
+    public static final RegistryObject<Block> LIGHT = BLOCKS.register("light", () -> new WeedLightBlock(AbstractBlock.Properties.copy(Blocks.REDSTONE_LAMP).noOcclusion()));
 }

@@ -37,6 +37,7 @@ public class WeedCraftItemModelProvider extends ItemModelProvider {
         singleTexture("hook", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(WeedCraft.MOD_ID, "item/hook"));
         singleTexture("grinder", new ResourceLocation("item/generated"), "layer0", new ResourceLocation(WeedCraft.MOD_ID, "item/grinder"));
         withExistingParent("pot", new ResourceLocation(WeedCraft.MOD_ID, "block/pot"));
+        withExistingParent("light", new ResourceLocation(WeedCraft.MOD_ID, "block/light"));
 
     }
 }

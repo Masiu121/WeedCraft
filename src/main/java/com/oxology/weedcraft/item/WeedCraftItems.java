@@ -29,6 +29,7 @@ public class WeedCraftItems {
     public static final RegistryObject<Item> GRINDER = ITEMS.register("grinder", WeedGrinderItem::new);
     public static final RegistryObject<Item> HOOK = ITEMS.register("hook", () -> new WeedHookItem(WeedCraftBlocks.HOOK.get()));
     public static final RegistryObject<Item> POT = ITEMS.register("pot", () -> new WeedPotItem(WeedCraftBlocks.POT.get()));
+    public static final RegistryObject<Item> LIGHT = ITEMS.register("light", () -> new WeedLightItem(WeedCraftBlocks.LIGHT.get()));
 
     public static RegistryObject<Item> getSeedsByVariant(WeedVariant weedVariant) {
         for(RegistryObject<Item> item : ITEMS.getEntries()) {
