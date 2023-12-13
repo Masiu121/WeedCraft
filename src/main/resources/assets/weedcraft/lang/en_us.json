@@ -17,6 +17,7 @@
 
   "block.weedcraft.hook": "Hook",
   "block.weedcraft.pot": "Pot",
+  "block.weedcraft.light": "Light",
 
   "itemGroup.WeedCraft": "WeedCraft"
 }
