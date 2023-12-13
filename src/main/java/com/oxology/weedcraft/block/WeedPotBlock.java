@@ -45,9 +45,17 @@ public class WeedPotBlock extends Block {
         if (!world.isAreaLoaded(pos, 1)) return;
         if (world.getRawBrightness(pos, 0) >= 9) {
             int currentAge = state.getValue(AGE);
-            boolean grow = random.nextInt((int)(25.0F / 4) + 1) == 0;
+            boolean grow = random.nextInt((int)(25.0F / getGrowthSpeed(world, pos)) + 1) == 0;
             if(grow) world.setBlock(pos, state.setValue(AGE, currentAge+1), 2);
         }
+    }
+
+    private float getGrowthSpeed(ServerWorld world, BlockPos pos) {
+        float speed = 3;
+        if(world.getBlockState(pos.above(2)).is(WeedCraftBlocks.LIGHT.get())) {
+            speed += 1;
+        }
+        return speed;
     }
 
     @SubscribeEvent
