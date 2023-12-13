@@ -38,6 +38,13 @@ public class WeedCraft {
         ComposterBlock.COMPOSTABLES.put(WeedCraftItems.PURPLE_HAZE_FLOWER.get(), 0.5f);
         ComposterBlock.COMPOSTABLES.put(WeedCraftItems.PURPLE_HAZE_LEAF.get(), 0.5f);
         ComposterBlock.COMPOSTABLES.put(WeedCraftItems.PURPLE_HAZE_PLANT.get(), 0.75f);
+        ComposterBlock.COMPOSTABLES.put(WeedCraftItems.PURPLE_HAZE_GRINDED.get(), 0.25f);
+
+        ComposterBlock.COMPOSTABLES.put(WeedCraftItems.LEMON_HAZE_SEEDS.get(), 0.5f);
+        ComposterBlock.COMPOSTABLES.put(WeedCraftItems.LEMON_HAZE_FLOWER.get(), 0.5f);
+        ComposterBlock.COMPOSTABLES.put(WeedCraftItems.LEMON_HAZE_LEAF.get(), 0.5f);
+        ComposterBlock.COMPOSTABLES.put(WeedCraftItems.LEMON_HAZE_PLANT.get(), 0.75f);
+        ComposterBlock.COMPOSTABLES.put(WeedCraftItems.LEMON_HAZE_GRINDED.get(), 0.25f);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
