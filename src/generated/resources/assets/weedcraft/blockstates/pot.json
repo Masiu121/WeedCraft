@@ -71,6 +71,30 @@
     },
     "age=7,variant=lemon_haze": {
       "model": "weedcraft:block/pot_lemon_haze_7"
+    },
+    "age=0,variant=amnesia_haze": {
+      "model": "weedcraft:block/pot_amnesia_haze_0"
+    },
+    "age=1,variant=amnesia_haze": {
+      "model": "weedcraft:block/pot_amnesia_haze_1"
+    },
+    "age=2,variant=amnesia_haze": {
+      "model": "weedcraft:block/pot_amnesia_haze_2"
+    },
+    "age=3,variant=amnesia_haze": {
+      "model": "weedcraft:block/pot_amnesia_haze_3"
+    },
+    "age=4,variant=amnesia_haze": {
+      "model": "weedcraft:block/pot_amnesia_haze_4"
+    },
+    "age=5,variant=amnesia_haze": {
+      "model": "weedcraft:block/pot_amnesia_haze_5"
+    },
+    "age=6,variant=amnesia_haze": {
+      "model": "weedcraft:block/pot_amnesia_haze_6"
+    },
+    "age=7,variant=amnesia_haze": {
+      "model": "weedcraft:block/pot_amnesia_haze_7"
     }
   }
 }

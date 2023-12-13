@@ -80,22 +80,17 @@ public class WeedPotBlock extends Block {
                                 event.getPos().getZ(),
                                 new ItemStack(WeedCraftItems.getPlantByVariant(state.getValue(VARIANT)).get())
                         ));
-                        event.getWorld().addFreshEntity(new ItemEntity(
-                                event.getWorld(),
-                                event.getPos().getX(),
-                                event.getPos().getY(),
-                                event.getPos().getZ(),
-                                new ItemStack(WeedCraftItems.getSeedsByVariant(state.getValue(VARIANT)).get())
-                        ));
-                    }
 
-                    event.getWorld().addFreshEntity(new ItemEntity(
-                            event.getWorld(),
-                            event.getPos().getX(),
-                            event.getPos().getY(),
-                            event.getPos().getZ(),
-                            new ItemStack(WeedCraftItems.getSeedsByVariant(state.getValue(VARIANT)).get())
-                    ));
+                        if(event.getWorld().getRandom().nextFloat() < state.getValue(VARIANT).getChance()) {
+                            event.getWorld().addFreshEntity(new ItemEntity(
+                                    event.getWorld(),
+                                    event.getPos().getX(),
+                                    event.getPos().getY(),
+                                    event.getPos().getZ(),
+                                    new ItemStack(WeedCraftItems.getSeedsByVariant(state.getValue(VARIANT)).get())
+                            ));
+                        }
+                    }
 
                     event.getWorld().setBlock(event.getPos(), state.setValue(VARIANT, WeedVariant.NONE).setValue(AGE, 0), 2);
                 }

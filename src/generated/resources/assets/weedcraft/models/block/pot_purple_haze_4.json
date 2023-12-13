@@ -1,7 +1,7 @@
 {
   "parent": "weedcraft:block/pot",
   "textures": {
-    "crop_bottom": "weedcraft:block/purple_haze_4",
-    "crop_top": "weedcraft:block/purple_haze_9"
+    "crop_bottom": "weedcraft:block/purple_haze/purple_haze_4",
+    "crop_top": "weedcraft:block/purple_haze/purple_haze_9"
   }
 }

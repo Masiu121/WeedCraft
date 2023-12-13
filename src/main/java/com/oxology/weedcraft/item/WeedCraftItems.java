@@ -26,6 +26,12 @@ public class WeedCraftItems {
     public static final RegistryObject<Item> LEMON_HAZE_PLANT = ITEMS.register("plant_lemon_haze", () -> new WeedPlantItem(WeedVariant.LEMON_HAZE));
     public static final RegistryObject<Item> LEMON_HAZE_GRINDED = ITEMS.register("grinded_lemon_haze", () -> new WeedGrindedItem(WeedVariant.LEMON_HAZE));
 
+    public static final RegistryObject<Item> AMNESIA_HAZE_SEEDS = ITEMS.register("seeds_amnesia_haze", () -> new WeedSeedsItem(WeedVariant.AMNESIA_HAZE));
+    public static final RegistryObject<Item> AMNESIA_HAZE_LEAF = ITEMS.register("leaf_amnesia_haze", () -> new WeedLeafItem(WeedVariant.AMNESIA_HAZE));
+    public static final RegistryObject<Item> AMNESIA_HAZE_FLOWER = ITEMS.register("flower_amnesia_haze", () -> new WeedFlowerItem(WeedVariant.AMNESIA_HAZE));
+    public static final RegistryObject<Item> AMNESIA_HAZE_PLANT = ITEMS.register("plant_amnesia_haze", () -> new WeedPlantItem(WeedVariant.AMNESIA_HAZE));
+    public static final RegistryObject<Item> AMNESIA_HAZE_GRINDED = ITEMS.register("grinded_amnesia_haze", () -> new WeedGrindedItem(WeedVariant.AMNESIA_HAZE));
+
     public static final RegistryObject<Item> GRINDER = ITEMS.register("grinder", WeedGrinderItem::new);
     public static final RegistryObject<Item> HOOK = ITEMS.register("hook", () -> new WeedHookItem(WeedCraftBlocks.HOOK.get()));
     public static final RegistryObject<Item> POT = ITEMS.register("pot", () -> new WeedPotItem(WeedCraftBlocks.POT.get()));

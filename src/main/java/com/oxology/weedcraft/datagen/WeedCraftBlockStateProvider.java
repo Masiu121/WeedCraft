@@ -37,12 +37,10 @@ public class WeedCraftBlockStateProvider extends BlockStateProvider {
             modelBuilder = models().withExistingParent(modelName, new ResourceLocation(WeedCraft.MOD_ID, "block/pot"));
 
             String textureName = state.getValue(WeedPotBlock.VARIANT) + "_" + state.getValue(WeedPotBlock.AGE);
-            modelBuilder.texture("crop_bottom", new ResourceLocation(WeedCraft.MOD_ID, "block/" + textureName));
+            modelBuilder.texture("crop_bottom", new ResourceLocation(WeedCraft.MOD_ID, "block/" + state.getValue(WeedPotBlock.VARIANT) + "/" + textureName));
             if(state.getValue(WeedPotBlock.AGE) >= 3) {
                 textureName = state.getValue(WeedPotBlock.VARIANT) + "_" + (state.getValue(WeedPotBlock.AGE) + 5);
-                modelBuilder.texture("crop_top", new ResourceLocation(WeedCraft.MOD_ID, "block/" + textureName));
-            } else {
-                modelBuilder.texture("crop_top", new ResourceLocation(WeedCraft.MOD_ID, "block/air"));
+                modelBuilder.texture("crop_top", new ResourceLocation(WeedCraft.MOD_ID, "block/" + state.getValue(WeedPotBlock.VARIANT) + "/" + textureName));
             }
 
             return new ConfiguredModel[] { new ConfiguredModel(modelBuilder) };
@@ -62,9 +60,9 @@ public class WeedCraftBlockStateProvider extends BlockStateProvider {
             modelBuilder = models().withExistingParent(modelName, new ResourceLocation(WeedCraft.MOD_ID, "block/hook"));
 
             String textureName = state.getValue(WeedPotBlock.VARIANT) + "_7";
-            modelBuilder.texture("crop_bottom", new ResourceLocation(WeedCraft.MOD_ID, "block/" + textureName));
+            modelBuilder.texture("crop_bottom", new ResourceLocation(WeedCraft.MOD_ID, "block/" + state.getValue(WeedPotBlock.VARIANT) + "/" + textureName));
             textureName = state.getValue(WeedPotBlock.VARIANT) + "_12";
-            modelBuilder.texture("crop_top", new ResourceLocation(WeedCraft.MOD_ID, "block/" + textureName));
+            modelBuilder.texture("crop_top", new ResourceLocation(WeedCraft.MOD_ID, "block/" + state.getValue(WeedPotBlock.VARIANT) + "/" + textureName));
 
             return new ConfiguredModel[] { new ConfiguredModel(modelBuilder) };
         });

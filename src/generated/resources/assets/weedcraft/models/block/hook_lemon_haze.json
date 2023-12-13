@@ -1,7 +1,7 @@
 {
   "parent": "weedcraft:block/hook",
   "textures": {
-    "crop_bottom": "weedcraft:block/lemon_haze_7",
-    "crop_top": "weedcraft:block/lemon_haze_12"
+    "crop_bottom": "weedcraft:block/lemon_haze/lemon_haze_7",
+    "crop_top": "weedcraft:block/lemon_haze/lemon_haze_12"
   }
 }

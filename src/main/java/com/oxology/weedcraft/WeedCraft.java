@@ -5,6 +5,7 @@ import com.oxology.weedcraft.block.WeedHookBlock;
 import com.oxology.weedcraft.block.WeedPotBlock;
 import com.oxology.weedcraft.item.WeedCraftItems;
 import com.oxology.weedcraft.util.WeedCraftCreativeTab;
+import com.oxology.weedcraft.util.WeedVariant;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
@@ -14,6 +15,10 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+
+import java.util.Random;
 
 @Mod(WeedCraft.MOD_ID)
 public class WeedCraft {
@@ -45,6 +50,12 @@ public class WeedCraft {
         ComposterBlock.COMPOSTABLES.put(WeedCraftItems.LEMON_HAZE_LEAF.get(), 0.5f);
         ComposterBlock.COMPOSTABLES.put(WeedCraftItems.LEMON_HAZE_PLANT.get(), 0.75f);
         ComposterBlock.COMPOSTABLES.put(WeedCraftItems.LEMON_HAZE_GRINDED.get(), 0.25f);
+
+        ComposterBlock.COMPOSTABLES.put(WeedCraftItems.AMNESIA_HAZE_SEEDS.get(), 0.5f);
+        ComposterBlock.COMPOSTABLES.put(WeedCraftItems.AMNESIA_HAZE_FLOWER.get(), 0.5f);
+        ComposterBlock.COMPOSTABLES.put(WeedCraftItems.AMNESIA_HAZE_LEAF.get(), 0.5f);
+        ComposterBlock.COMPOSTABLES.put(WeedCraftItems.AMNESIA_HAZE_PLANT.get(), 0.75f);
+        ComposterBlock.COMPOSTABLES.put(WeedCraftItems.AMNESIA_HAZE_GRINDED.get(), 0.25f);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

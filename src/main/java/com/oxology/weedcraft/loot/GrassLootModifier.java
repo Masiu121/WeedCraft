@@ -33,12 +33,7 @@ public class GrassLootModifier extends LootModifier {
     @Nonnull
     @Override
     protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
-        WeedVariant weedVariant;
-        do {
-            weedVariant = WeedVariant.values()[new Random().nextInt(WeedVariant.values().length)];
-        } while(weedVariant == WeedVariant.NONE);
-
-        generatedLoot.add(new ItemStack(WeedCraftItems.getSeedsByVariant(weedVariant).get()));
+        generatedLoot.add(new ItemStack(WeedCraftItems.getSeedsByVariant(WeedVariant.getRandom(context.getRandom())).get()));
         return generatedLoot;
     }
 

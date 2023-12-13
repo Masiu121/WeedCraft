@@ -1,0 +1,7 @@
+{
+  "parent": "weedcraft:block/pot",
+  "textures": {
+    "crop_bottom": "weedcraft:block/amnesia_haze/amnesia_haze_5",
+    "crop_top": "weedcraft:block/amnesia_haze/amnesia_haze_10"
+  }
+}

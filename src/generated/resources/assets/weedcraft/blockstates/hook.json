@@ -8,6 +8,9 @@
     },
     "variant=lemon_haze": {
       "model": "weedcraft:block/hook_lemon_haze"
+    },
+    "variant=amnesia_haze": {
+      "model": "weedcraft:block/hook_amnesia_haze"
     }
   }
 }

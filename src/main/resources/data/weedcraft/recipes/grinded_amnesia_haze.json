@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "weedcraft:grinder"
+    },
+    {
+      "item": "weedcraft:flower_amnesia_haze"
+    }
+  ],
+  "result": {
+    "item": "weedcraft:grinded_amnesia_haze",
+    "count": 2
+  }
+}
