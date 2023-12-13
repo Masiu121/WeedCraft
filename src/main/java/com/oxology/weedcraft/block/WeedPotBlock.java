@@ -81,7 +81,7 @@ public class WeedPotBlock extends Block {
                                 new ItemStack(WeedCraftItems.getPlantByVariant(state.getValue(VARIANT)).get())
                         ));
 
-                        if(event.getWorld().getRandom().nextFloat() < state.getValue(VARIANT).getChance()) {
+                        if(event.getWorld().getRandom().nextFloat() < (state.getValue(VARIANT).getChance()*1.5f)) {
                             event.getWorld().addFreshEntity(new ItemEntity(
                                     event.getWorld(),
                                     event.getPos().getX(),

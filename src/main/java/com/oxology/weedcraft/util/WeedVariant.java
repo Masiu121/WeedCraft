@@ -6,8 +6,8 @@ import java.util.Random;
 
 public enum WeedVariant implements IStringSerializable {
     NONE("none", 0.0f),
-    PURPLE_HAZE("purple_haze", 0.4f),
-    LEMON_HAZE("lemon_haze", 0.4f),
+    PURPLE_HAZE("purple_haze", 0.3f),
+    LEMON_HAZE("lemon_haze", 0.5f),
     AMNESIA_HAZE("amnesia_haze", 0.2f);
 
     private final String name;
