@@ -1,0 +1,6 @@
+{
+	"parent": "weedcraft:block/light",
+	"textures": {
+		"particle": "weedcraft:block/light_lit"
+	}
+}

@@ -1,24 +1,26 @@
 package com.oxology.weedcraft;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.platform.GlStateManager;
 import com.oxology.weedcraft.block.WeedCraftBlocks;
 import com.oxology.weedcraft.block.WeedHookBlock;
 import com.oxology.weedcraft.block.WeedPotBlock;
+import com.oxology.weedcraft.effect.WeedCraftEffects;
 import com.oxology.weedcraft.item.WeedCraftItems;
 import com.oxology.weedcraft.util.WeedCraftCreativeTab;
-import com.oxology.weedcraft.util.WeedVariant;
 import net.minecraft.block.ComposterBlock;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.IngameGui;
+import net.minecraft.client.renderer.OverlayRenderer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemGroup;
+import net.minecraftforge.client.gui.ForgeIngameGui;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-
-import java.util.Random;
 
 @Mod(WeedCraft.MOD_ID)
 public class WeedCraft {
@@ -28,6 +30,7 @@ public class WeedCraft {
     public WeedCraft() {
         WeedCraftItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         WeedCraftBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        WeedCraftEffects.EFFECTS.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);

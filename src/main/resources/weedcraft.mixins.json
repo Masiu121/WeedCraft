@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.oxology.weedcraft.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "weedcraft.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "ForgeIngameGuiMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

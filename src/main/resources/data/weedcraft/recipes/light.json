@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#U#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:brick"
+    },
+    "U": {
+      "item": "minecraft:dirt"
+    }
+  },
+  "result": {
+    "item": "weedcraft:pot"
+  }
+}
