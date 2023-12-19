@@ -1,6 +1,5 @@
 package com.oxology.weedcraft.effect;
 
-import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.EffectType;
