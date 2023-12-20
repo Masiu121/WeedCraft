@@ -82,14 +82,14 @@ public abstract class ForgeIngameGuiMixin extends IngameGui {
             case 2:
                 draw(vignette2, 0.0f, 1.0f, 1.0f);
                 draw(vignette3, 1.0f, 1.0f, 1.0f);
-                if(minecraft.gameRenderer.currentEffect().getName().equals("weedcraft:shaders/post/blur_light.json") || minecraft.gameRenderer.currentEffect() == null) {
+                if((minecraft.gameRenderer.currentEffect() != null && minecraft.gameRenderer.currentEffect().getName().equals("weedcraft:shaders/post/blur_light.json")) || minecraft.gameRenderer.currentEffect() == null) {
                     minecraft.gameRenderer.loadEffect(blur_medium);
                 }
                 break;
             case 3:
                 draw(vignette2, 0.0f, 1.0f, 1.0f);
                 draw(vignette3, 1.0f, 1.0f, 1.0f);
-                if(minecraft.gameRenderer.currentEffect().getName().equals("weedcraft:shaders/post/blur_medium.json") || minecraft.gameRenderer.currentEffect() == null) {
+                if((minecraft.gameRenderer.currentEffect() != null && minecraft.gameRenderer.currentEffect().getName().equals("weedcraft:shaders/post/blur_medium.json")) || minecraft.gameRenderer.currentEffect() == null) {
                     minecraft.gameRenderer.loadEffect(blur_strong);
                 }
                 break;
